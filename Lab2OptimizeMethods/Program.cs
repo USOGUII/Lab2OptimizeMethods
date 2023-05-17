@@ -49,10 +49,10 @@ namespace First
             for (k = 0; k <= M; k++, tk[k] = tk[k - 1])
             {
                 Console.WriteLine($"Итерация {k}");
-                xk[k] = Math.Abs(Math.Sqrt(Math.Pow((a2 * leftk[k] + rightk[k]), 2) + Math.Pow((leftk[k] + c2 * rightk[k]), 2)));
+                xk[k] = (Math.Sqrt(Math.Pow((a2 * leftk[k] + b * rightk[k]), 2) + Math.Pow((b * leftk[k] + c2 * rightk[k]), 2)));
 
-                rightforwork = a2 * leftk[k] + rightk[k];
-                rightforwork1 = leftk[k] + c2 * rightk[k];
+                rightforwork = a2 * leftk[k] + b * rightk[k];
+                rightforwork1 = b * leftk[k] + c2 * rightk[k];
                 leftk[k + 1] = leftk[k] - tk[k] * rightforwork;
                 rightk[k + 1] = rightk[k] - tk[k] * rightforwork1;
 
@@ -74,8 +74,8 @@ namespace First
                 }
             stepp7:
 
-                rightforwork = a2 * leftk[k] + rightk[k];
-                rightforwork1 = leftk[k] + c2 * rightk[k];
+                rightforwork = a2 * leftk[k] + b * rightk[k];
+                rightforwork1 = b * leftk[k] + c2 * rightk[k];
 
                 leftk[k + 1] = leftk[k] - tk[k] * rightforwork;
                 rightk[k + 1] = rightk[k] - tk[k] * rightforwork1;
